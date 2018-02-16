@@ -1,0 +1,11 @@
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.deps.json
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.runtimeconfig.json
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.runtimeconfig.dev.json
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.dll
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.pdb
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.csprojResolveAssemblyReference.cache
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.csproj.CoreCompileInputs.cache
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.AssemblyInfoInputs.cache
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.AssemblyInfo.cs
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.dll
+C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.pdb
