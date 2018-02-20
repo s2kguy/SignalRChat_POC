@@ -5408,7 +5408,7 @@
     "Remotion.Linq/2.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "sha512": "sha512-K/TqnsSM+wSF6ZG3+CJtbKzzIlZqROOXvCSPKYaANxYK1s5VS0QpZgMSxrnk1p6WuNxb/zqh1rdNN4smZvTLIQ==",
       "path": "remotion.linq/2.1.1",
       "hashPath": "remotion.linq.2.1.1.nupkg.sha512"
     },
@@ -5709,7 +5709,7 @@
     "System.Data.Common/4.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-epU8jeTe7aE7RqGHq9rZ8b0Q4Ah7DgubzHQblgZMSqgW1saW868WmooSyC5ywf8upLBkcVLDu93W9GPWUYsU2Q==",
+      "sha512": "sha512-dINZZPXXbbPosEyEOXV0WWhBA4ndVsBBP/iHe3LhfUZr/HMnNvl9RQGT4DgLtPqMrY2zKVGEcMCSjf4VW4JoCQ==",
       "path": "system.data.common/4.1.0",
       "hashPath": "system.data.common.4.1.0.nupkg.sha512"
     },
@@ -5856,7 +5856,7 @@
     "System.Linq.Queryable/4.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "sha512-tvpRg9V2HTiExs9igd3q9dsaOco1nxwuSUszhV6veP66u40lFdYIJp2AUTkJRlOVsqr7KLy/qE6mFKdHl8XLAg==",
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },

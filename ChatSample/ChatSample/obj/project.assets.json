@@ -7917,7 +7917,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "sha512": "K/TqnsSM+wSF6ZG3+CJtbKzzIlZqROOXvCSPKYaANxYK1s5VS0QpZgMSxrnk1p6WuNxb/zqh1rdNN4smZvTLIQ==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -8922,7 +8922,7 @@
       ]
     },
     "System.Data.Common/4.1.0": {
-      "sha512": "epU8jeTe7aE7RqGHq9rZ8b0Q4Ah7DgubzHQblgZMSqgW1saW868WmooSyC5ywf8upLBkcVLDu93W9GPWUYsU2Q==",
+      "sha512": "dINZZPXXbbPosEyEOXV0WWhBA4ndVsBBP/iHe3LhfUZr/HMnNvl9RQGT4DgLtPqMrY2zKVGEcMCSjf4VW4JoCQ==",
       "type": "package",
       "path": "system.data.common/4.1.0",
       "files": [
@@ -10022,7 +10022,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "tvpRg9V2HTiExs9igd3q9dsaOco1nxwuSUszhV6veP66u40lFdYIJp2AUTkJRlOVsqr7KLy/qE6mFKdHl8XLAg==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -12996,8 +12996,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ryans\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\dbirt\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13006,20 +13005,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\ryans\\Desktop\\SignalR-samples-master\\ChatSample\\ChatSample\\ChatSample.csproj",
+      "projectUniqueName": "C:\\Projects\\singalRChat\\ChatSample\\ChatSample\\ChatSample.csproj",
       "projectName": "ChatSample",
-      "projectPath": "C:\\Users\\ryans\\Desktop\\SignalR-samples-master\\ChatSample\\ChatSample\\ChatSample.csproj",
-      "packagesPath": "C:\\Users\\ryans\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ryans\\Desktop\\SignalR-samples-master\\ChatSample\\ChatSample\\obj\\",
+      "projectPath": "C:\\Projects\\singalRChat\\ChatSample\\ChatSample\\ChatSample.csproj",
+      "packagesPath": "C:\\Users\\dbirt\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\singalRChat\\ChatSample\\ChatSample\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ryans\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\dbirt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13042,22 +13039,22 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.All": {
+          "jQuery": {
             "target": "Package",
-            "version": "[2.0.0, )"
-          },
-          "Microsoft.AspNetCore.SignalR": {
-            "target": "Package",
-            "version": "[1.0.0-alpha2-final, )"
+            "version": "3.3.1"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0",
             "autoReferenced": true
           },
-          "jQuery": {
+          "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "[3.3.1, )"
+            "version": "2.0.0"
+          },
+          "Microsoft.AspNetCore.SignalR": {
+            "target": "Package",
+            "version": "1.0.0-alpha2-final"
           }
         },
         "imports": [

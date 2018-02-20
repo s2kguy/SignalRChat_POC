@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>SignalR Simple Chat</title>
-    <script src="jquery-3.3.1.min.js"></script>
+    <script src="/scripts/jquery-3.3.1.min.js"></script>
     <style type="text/css">
         #mainChat {
             background-color: #99CCFF;
@@ -23,10 +23,13 @@
     </div>
 
     <div id="dm" class="container">
-
+        <label>Direct Message Panel</label>
+        <input type="text" id="dm-message" />
+        <input type="hidden" id="groupName"/>
+        <input type="button" id="dm-sendmessage" value="Send" />
+        <input type="button" id="dm-closee" value="Close" />
+        <ul id="dm-discussion"></ul>
     </div>
-
-
 
     <!--Script references. -->
     <!--Reference the SignalR library. -->
@@ -69,6 +72,7 @@
                     var liElement = document.createElement('li');
                     // Embedding the connectionID into the <li> element as an attribute
                     liElement.setAttribute('id', connId);
+                    liElement.setAttribute('class', 'sr-message');
                     liElement.innerHTML = '<strong>' + encodedName + '</strong>:&nbsp;&nbsp;' + encodedMsg;
 
                     document.getElementById('discussion').appendChild(liElement);
@@ -82,14 +86,9 @@
             })
                 .then(function (connection) { 
                     console.log('connection started');
-                  
-
 
                     // SENDING MESSAGES TO THE CHAT
                     document.getElementById('sendmessage').addEventListener('click', function (event) {
-                        //
-
-                        // Call the Send method on the hub.
 
                         connection.invoke('send', name, messageInput.value);
 
@@ -99,31 +98,45 @@
                         event.preventDefault();
                     });
 
-                    var connectionId;
-                    document.getElementById('discussion').addEventListener('click', function (event) {
-                      
-                        connectionId = event.target.id;
-                        alert(connectionId);
+                    // SENDING DM-MESSAGES TO THE CHAT
+                    document.getElementById('dm-sendmessage').addEventListener('click', function (event) {
+                        // need the group Id for this 
+                        var group = $('#groupName').val();
+
+                        connection.invoke('senddm', name, messageInput.value, group);
+
+                        // Clear text box and reset focus for next comment.
+                        //messageInput.value = '';
+                        //messageInput.focus();
+                        event.preventDefault();
+                    });
+
+
+                    //var connectionId;
+                    //document.getElementById('discussion').addEventListener('click', function (event) {
+
+                    //    connectionId = connection.connection.connectionId;
+                    //    alert(connectionId);
                         
-                        var div = document.createElement('div');
-                        div.setAttribute('class', 'mainChat');
-                        div.innerHTML = ' <input type="text" id="message" />'+
-                            '<input type= "button" id= "sendmessage" value= "Send"/>'+
-                            '<ul id="direct"></ul>:&nbsp;&nbsp;';
-                        document.getElementById('dm').appendChild(div);
+                    //    var div = document.createElement('div');
+                    //    div.setAttribute('class', 'mainChat');
+                    //    div.innerHTML = ' <input type="text" id="message" />'+
+                    //        '<input type= "button" id= "sendmessage" value= "Send"/>'+
+                    //        '<ul id="direct"></ul>:&nbsp;&nbsp;';
+                    //    document.getElementById('dm').appendChild(div);
 
                          
-                        connection.invoke('addtogroup', function (connectionId) {
-                            var liElement = document.createElement('li');
-                            var message = 'Someone has joined!';
-                            liElement.innerHTML = '<strong>' + message + '</strong>:&nbsp;&nbsp;';
-                            document.getElementById('direct').appendChild(liElement);
-                         });
+                    //    connection.invoke('addtogroup', function (connectionId) {
+                    //        var liElement = document.createElement('li');
+                    //        var message = 'Someone has joined!';
+                    //        liElement.innerHTML = '<strong>' + message + '</strong>:&nbsp;&nbsp;';
+                    //        document.getElementById('direct').appendChild(liElement);
+                    //     });
                         
 
 
                        
-                    });
+                    //});
 
                
 
@@ -164,6 +177,5 @@
             }
         });
     </script>
-
 </body>
 </html>

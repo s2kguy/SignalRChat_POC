@@ -9,3 +9,14 @@ C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\ne
 C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.AssemblyInfo.cs
 C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.dll
 C:\Users\ryans\Desktop\SignalR-samples-master\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.pdb
+C:\Projects\singalRChat\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.deps.json
+C:\Projects\singalRChat\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.runtimeconfig.json
+C:\Projects\singalRChat\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.runtimeconfig.dev.json
+C:\Projects\singalRChat\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.dll
+C:\Projects\singalRChat\ChatSample\ChatSample\bin\Debug\netcoreapp2.0\ChatSample.pdb
+C:\Projects\singalRChat\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.csprojResolveAssemblyReference.cache
+C:\Projects\singalRChat\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.csproj.CoreCompileInputs.cache
+C:\Projects\singalRChat\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.AssemblyInfoInputs.cache
+C:\Projects\singalRChat\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.AssemblyInfo.cs
+C:\Projects\singalRChat\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.dll
+C:\Projects\singalRChat\ChatSample\ChatSample\obj\Debug\netcoreapp2.0\ChatSample.pdb
