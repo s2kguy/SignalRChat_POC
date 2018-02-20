@@ -42,6 +42,7 @@ namespace SignalRChatSample
             Groups.AddAsync(Context.ConnectionId, groupName);
             // Clients.Group(groupName).InvokeAsync("groupJoined",groupName);
             Console.Write("GroupName: " + groupName);
+            Clients.Group(groupName).InvokeAsync("groupJoined", groupName);
         }
 
        /* public void AddToGroup(string name)

@@ -4,7 +4,7 @@
     <title>SignalR Simple Chat</title>
     <script src="/scripts/jquery-3.3.1.min.js"></script>
     <style type="text/css">
-        #mainChat {
+        #mainChat, #dm {
             background-color: #99CCFF;
             border: thick solid #808080;
             padding: 20px;
@@ -16,14 +16,20 @@
 
 
     <div id="mainChat" class="container">
+        <label>GROUP CHAT MOTHAFUCKAS</label>
+        <br />
+        <br />
         <input type="text" id="message" />
         <input type="button" id="sendmessage" value="Send" />
         <!--<input type="hidden" id="displayname" />-->
         <ul id="discussion"></ul>
     </div>
 
-    <div id="dm" class="container">
-        <label>Direct Message Panel</label>
+    <div id="dm" class="container" style="display:none;">
+        <label>DIRECT CHAT MOTHAFUCKAS</label><br />
+        <label id="groupId" ></label>
+        <br />
+        <br />
         <input type="text" id="dm-message" />
         <input type="hidden" id="groupName"/>
         <input type="button" id="dm-sendmessage" value="Send" />
@@ -47,27 +53,23 @@
     <script>
         var connection; // Makes the connection global
         var count = 0;
+        var groupName = '';
 
         function doShitOnClick(event) {
 
-            connectionId = connection.connection.connectionId;
+            connectionId = event.target.attributes[0].value;
             console.log('click event recieved', connectionId);
-            //alert(connectionId);
+            // Add these two users to a group together and show the DM panel.
+            connection.invoke('addtogroup', connectionId);
 
-            //var div = document.createElement('div');
-            //div.setAttribute('class', 'mainChat');
-            //div.innerHTML = ' <input type="text" id="message" />' +
-            //    '<input type= "button" id= "sendmessage" value= "Send"/>' +
-            //    '<ul id="direct"></ul>:&nbsp;&nbsp;';
-            //document.getElementById('dm').appendChild(div);
+            // Show the DM panel
+            $('#dm').css('display', '');
 
+            // Hide the main chat window so its a smoother user experience 
+            $('#mainChat').css('display', 'none');
 
-            //connection.invoke('addtogroup', function (connectionId) {
-            //    var liElement = document.createElement('li');
-            //    var message = 'Someone has joined!';
-            //    liElement.innerHTML = '<strong>' + message + '</strong>:&nbsp;&nbsp;';
-            //    document.getElementById('direct').appendChild(liElement);
-            //});
+           
+          
         }
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -102,8 +104,12 @@
                     document.getElementById('discussion').appendChild(liElement);
          
                 });
-                connection.on("groupJoined", function (groupName) {
-                    console.log(groupName);
+                connection.on("groupJoined", function (group) {
+                    console.log('joined group successfully',group);
+                    groupName = group;
+
+                    // Add a label up top so the user knows their group Id.. not required but I think its a nice feature
+                    $('#groupId').text('Currently chatting with group Id: ' + group);
                 });
 
  
