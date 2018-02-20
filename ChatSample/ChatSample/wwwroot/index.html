@@ -33,7 +33,7 @@
         <input type="text" id="dm-message" />
         <input type="hidden" id="groupName"/>
         <input type="button" id="dm-sendmessage" value="Send" />
-        <input type="button" id="dm-closee" value="Close" />
+        <input type="button" id="dm-close" value="Close" />
         <ul id="dm-discussion"></ul>
     </div>
 
@@ -57,17 +57,12 @@
 
         function doShitOnClick(event) {
 
-            connectionId = event.target.attributes[0].value;
+            connectionId = event.target.attributes['id'].value;
             console.log('click event recieved', connectionId);
             // Add these two users to a group together and show the DM panel.
             connection.invoke('addtogroup', connectionId);
 
-            // Show the DM panel
-            $('#dm').css('display', '');
-
-            // Hide the main chat window so its a smoother user experience 
-            $('#mainChat').css('display', 'none');
-
+           
            
           
         }
@@ -87,7 +82,7 @@
 
                
                 // Create a function that the hub can call to broadcast messages.
-                connection.on('broadcastMessage', function (name, message, connId) {
+                connection.on('broadcastMessage', function (name, message, connId, isDM) {
                     // Html encode display name and message.
                     var encodedName = name;
                     var encodedMsg = message;
@@ -96,17 +91,26 @@
                   
                     var liElement = document.createElement('li');
                     // Embedding the connectionID into the <li> element as an attribute
-                    liElement.setAttribute('id', connId);
                     liElement.setAttribute('class', 'sr-message');
-                    liElement.addEventListener('click', doShitOnClick);
+                    if (!isDM) {
+                        liElement.setAttribute('id', connId);
+                        liElement.addEventListener('click', doShitOnClick);
+                    }
                     liElement.innerHTML = '<strong>' + encodedName + '</strong>:&nbsp;&nbsp;' + encodedMsg;
 
-                    document.getElementById('discussion').appendChild(liElement);
+                    document.getElementById(isDM ? 'dm-discussion' : 'discussion').appendChild(liElement);
          
                 });
                 connection.on("groupJoined", function (group) {
                     console.log('joined group successfully',group);
                     groupName = group;
+
+                    // Show the DM panel
+                    $('#dm').css('display', '');
+
+                    // Hide the main chat window so its a smoother user experience 
+                    $('#mainChat').css('display', 'none');
+
 
                     // Add a label up top so the user knows their group Id.. not required but I think its a nice feature
                     $('#groupId').text('Currently chatting with group Id: ' + group);
@@ -131,26 +135,28 @@
                     // SENDING DM-MESSAGES TO THE CHAT
                     document.getElementById('dm-sendmessage').addEventListener('click', function (event) {
                         // need the group Id for this 
-                        var group = $('#groupName').val();
+                        
 
-                        connection.invoke('senddm', name, messageInput.value, group);
+                        connection.invoke('senddm', name, $('#dm-message')[0].value, groupName);
 
                         // Clear text box and reset focus for next comment.
-                        //messageInput.value = '';
-                        //messageInput.focus();
+                        $('#dm-message').value = '';
+                        $('#dm-message').focus();
                         event.preventDefault();
                     });
 
+                    document.getElementById('dm-close').addEventListener('click', function (event) {
+                        groupName = '';
+                        // Hide the DM panel
+                        $('#dm').css('display', 'none');
 
-                    //var connectionId;
-                    //document.getElementById('sr-message').addEventListener('click', );
+                        // Show the main chat window so its a smoother user experience 
+                        $('#mainChat').css('display', '');
 
-               
-
-                    /* CREATES A NEW GROUP FOR A DM
-                    document.getElementById().addEventListener('click', function (event) {
-                connection.invoke('addtogroup', )
-            });*/
+                        // TODO: fix this part.
+                        // let the other user know that we bailed
+                        connection.invoke('senddm', name, 'Other user has left the DM chat', groupName);
+                    });
                 })
                 .catch(error => {
                     console.error(error.message);

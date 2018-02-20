@@ -14,14 +14,14 @@ namespace SignalRChatSample
         public void Send(string name, string message)
         {
             // Call the broadcastMessage method to update clients.
-            Clients.All.InvokeAsync("broadcastMessage", name, message, Context.ConnectionId);
+            Clients.All.InvokeAsync("broadcastMessage", name, message, Context.ConnectionId, false);
             // Clients.Group.
             Console.Write("Message Sent");
         }
 
         public void SendDM(string name, string message, string groupName)
         {
-            Clients.Group(groupName).InvokeAsync("broadcastMessage", name, message);
+            Clients.Group(groupName).InvokeAsync("broadcastMessage", name, message,"NA", true);
 
         }
 
