@@ -47,6 +47,29 @@
     <script>
         var connection; // Makes the connection global
         var count = 0;
+
+        function doShitOnClick(event) {
+
+            connectionId = connection.connection.connectionId;
+            console.log('click event recieved', connectionId);
+            //alert(connectionId);
+
+            //var div = document.createElement('div');
+            //div.setAttribute('class', 'mainChat');
+            //div.innerHTML = ' <input type="text" id="message" />' +
+            //    '<input type= "button" id= "sendmessage" value= "Send"/>' +
+            //    '<ul id="direct"></ul>:&nbsp;&nbsp;';
+            //document.getElementById('dm').appendChild(div);
+
+
+            //connection.invoke('addtogroup', function (connectionId) {
+            //    var liElement = document.createElement('li');
+            //    var message = 'Someone has joined!';
+            //    liElement.innerHTML = '<strong>' + message + '</strong>:&nbsp;&nbsp;';
+            //    document.getElementById('direct').appendChild(liElement);
+            //});
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
 
             var messageInput = document.getElementById('message');
@@ -73,6 +96,7 @@
                     // Embedding the connectionID into the <li> element as an attribute
                     liElement.setAttribute('id', connId);
                     liElement.setAttribute('class', 'sr-message');
+                    liElement.addEventListener('click', doShitOnClick);
                     liElement.innerHTML = '<strong>' + encodedName + '</strong>:&nbsp;&nbsp;' + encodedMsg;
 
                     document.getElementById('discussion').appendChild(liElement);
@@ -113,30 +137,7 @@
 
 
                     //var connectionId;
-                    //document.getElementById('discussion').addEventListener('click', function (event) {
-
-                    //    connectionId = connection.connection.connectionId;
-                    //    alert(connectionId);
-                        
-                    //    var div = document.createElement('div');
-                    //    div.setAttribute('class', 'mainChat');
-                    //    div.innerHTML = ' <input type="text" id="message" />'+
-                    //        '<input type= "button" id= "sendmessage" value= "Send"/>'+
-                    //        '<ul id="direct"></ul>:&nbsp;&nbsp;';
-                    //    document.getElementById('dm').appendChild(div);
-
-                         
-                    //    connection.invoke('addtogroup', function (connectionId) {
-                    //        var liElement = document.createElement('li');
-                    //        var message = 'Someone has joined!';
-                    //        liElement.innerHTML = '<strong>' + message + '</strong>:&nbsp;&nbsp;';
-                    //        document.getElementById('direct').appendChild(liElement);
-                    //     });
-                        
-
-
-                       
-                    //});
+                    //document.getElementById('sr-message').addEventListener('click', );
 
                
 
